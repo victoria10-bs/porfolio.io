@@ -1,0 +1,431 @@
+body{
+    min-height: 100vh;
+    margin: 0;
+    max-height: 100vh;
+    overflow: hidden;
+    background-image:url(fondo4.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.centered{
+    margin: auto;
+    width: max-content;
+}
+
+.flipbook{
+    margin: 3em auto;
+    width: 800px;
+    height: 800px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.flipbook .leaf{
+    position: absolute;
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 70%;
+    background-color: #fff;
+    left: 50%;
+    transition: transform 1s;
+    transform: rotate3d(0,1,0,0deg);
+    transform-origin: left 0px;
+}
+
+.flipbook .leaf .page{
+    transform-style: preserve-3d;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.flipbook .leaf .page.front{
+    transform: rotate3d(0,1,0,0deg) translate3d(0,0,0.1px);
+}
+
+.flipbook .leaf .page.front:not(.external){
+    box-shadow: inset 5px 0px 5px -5px #0005;
+}
+
+.flipbook .leaf .page.back{
+    transform: rotate3d(0,1,0,180deg) translate3d(0,0,0.1px);
+}
+
+.flipbook .leaf .page.back:not(.external){
+    box-shadow: inset -5px 0px 5px -5px #0005;
+}
+
+.disable{
+    user-select: none;
+    opacity: 0.6;
+}
+
+.title{
+    text-align: center;
+    width: 100%;
+    padding: 0em, !important;
+    padding-top: 2em;
+}
+
+.page{
+    padding: 5px;
+    padding-left: 5px;
+}
+
+.page.front{
+    border-radius: 0;
+
+}
+
+.page.back{
+    border-radius: 1em 0em 0em 1em;
+}
+
+.leaf{
+    background-color: #0000 !important;
+}
+
+.pageNumber{
+    font-size: 0.75em;
+    position: absolute;
+    bottom: 0.5em;
+    width: 400px;
+}
+
+.front .pageNumber{
+    right: 0.75em;
+}
+
+.back .pageNumber{
+    left: 0.75em;
+}
+
+
+.contents-row{
+    display: flex;
+    flex-flow: row nowrap;
+    width:400px;
+    top: 100px;
+    left: 70px;
+    position: relative;
+    font-size: 20px;
+}
+
+.contents-row .spacer{
+    flex: 1 1;
+    height: 1em;
+    border-bottom: 1px dashed #000;
+}
+
+.contents-row .text{
+    flex: 0 0 auto;
+    
+}
+/*
+h1,h2,h3{
+font-family: 'cursive';
+} */
+p{
+    font-size: 0.95em;
+}
+
+body[onload]{
+    transform: scale(1.5);
+    transform-origin: center top;
+}
+
+body[onload] .leaf:nth-child(1){
+    transform: rotate3d(0,1,0,-128deg) !important;
+}
+
+body[onload] .leaf:nth-child(2){
+    transform: rotate3d(0,1,0,-70deg) !important;
+}
+
+body[onload] .leaf:nth-child(3){
+    transform: rotate3d(0,1,0,-40deg) !important;
+}
+body[onload] div.leaf:nth-child(4)> div:nth-child(1){
+    background-color: #e76f51;
+}
+
+.cd__intro{
+    background: #c0e;
+}
+
+
+.controls button {
+    background-color: #988b75;
+    color: rgb(74, 32, 6);
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 100px;
+    height: 45px;
+    transition: 0.3s;
+    font-size:20px;
+    }
+
+    button:hover {
+    background-color: #988b75;
+    box-shadow: 0 0 0 5px rgb(74, 32, 6);
+    color: #2f1f04;
+    }
+
+
+/* #leaf2{
+    width:400px;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Work+Sans:wght@100;300;400;600;800&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Work Sans';
+    margin: 0;
+    padding: 0;
+}
+html{
+    /* me permite deslizar cuando hago clic en los links del menu */
+    scroll-behavior: smooth;
+}
+
+.inicio .contenido-banner{
+    padding: 20px;
+    background-color:transparent;
+    max-width: 350px;
+    margin: auto;
+    text-align: center;
+    border-radius: 40px;
+    left:110px;
+    position: absolute;
+    top:60px;
+}
+.inicio .contenido-banner img{
+    margin-top: 40px;
+    border: 8px solid #988b75;
+    display: block;
+    width: 70%;
+    left: 20px;
+    margin: auto;
+    border-radius: 100%;
+}
+.habilidades{
+    display: inline-block;
+    position: absolute;
+    top: 600px;
+    left: 150px;
+    font-size:30px;
+}
+
+.habilidades svg{
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 10px 4px;
+    font-size: 15px;
+    transition: .3s;
+    top:-80px;
+    position: relative;
+    width: 40px;
+}
+
+.habilidades svg:hover{
+    color: #fff;
+    background-color: #866332;
+}
+
+.inicio .contenido-banner h1{
+    margin-top: 40px;
+    font-size: 60px;
+        font-family: 'Tangerine';
+}
+.inicio .contenido-banner h2{
+    font-size: 15px;
+    font-weight: normal;
+}
+.inicio .contenido-banner .redes a{
+    color: black;
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid black;
+    border-radius: 100%;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    margin: 40px 5px;
+    font-size: 25px;
+    transition: .3s;
+}
+.inicio .contenido-banner .redes a:hover{
+    background-color: #866332;
+    color: #fff;
+    border:1px solid #fff;
+}
+
+img{
+    width: 300px;
+    height: 200px;
+    top: 30px;
+    position: relative;
+    left: 80px;
+}
+
+.cafe{
+    top: 50px;
+    left: 80px;
+    position: relative;
+}
+.cafe3{
+    font-family: 'Tangerine';
+    font-size: 50px;
+}
+
+.cafe2{
+    top: 40px;
+    position: relative;
+}
+
+.perri{
+    top: 70px;
+    width: 300px;
+    height: 200px;
+}
+/* img .foto{
+    width: 200px;
+    height:200px;
+} */
+
+h2{
+    font-family: 'Tangerine';
+    position: relative;
+    top: 80px;
+    left: 80px;
+    font-size: 55px;
+}
+h6{
+    font-family: 'Work Sans';
+    font-size:20px;
+}
+
+p{
+    font-family: 'Zilla Slab';
+    font-size: 20px;
+    width: 400px;
+    padding-left:60px;
+    padding-top: 20px;
+    position: relative;
+    top: 30px;
+}
+
+
+
+h5
+    {
+        font-family:'Tangerine', 'cursive;';
+        font-size:85px;
+        top:60px;
+        left:210px;
+        position:absolute;
+    }
+
+
+em{top:160px;
+    left:170px;
+    position:absolute;
+    font-size:35px;
+}
+
+.lol3{
+    font-family: 'Tangerine';
+    top:10px;
+    position: relative;
+    font-size: 50px;
+}
+
+.lol4{
+    top:10px;
+    position: relative;
+    font-size: 50px;
+}
+
+.lol{
+    font-family: 'Tangerine';
+    top:10px;
+    position: relative;
+    font-size: 50px;
+}
+
+.lol2{
+    top: 0px;
+    position: relative;
+}
+
+
+
+.golden-button1 a{
+    text-decoration:none;
+    color:rgb(74, 32, 6);
+}
+
+.golden-button1 {
+    touch-action: manipulation;
+    display: inline-block;
+    outline: none;
+    font-family: inherit;
+    font-size: 1em;
+    position:relative;
+    text-decoration: none;
+    top:80px;
+    left:90px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 0.3em;
+    height: 2.75em;
+    line-height: 2.5em;
+    text-transform: uppercase;
+    padding: 0 1em;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
+    inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+    background-image: linear-gradient(
+    160deg,
+    #a54e07,
+    #b47e11,
+    #fef1a2,
+    #bc881b,
+    #a54e07
+    );
+    border: 1px solid #a55d07;
+    color: rgb(120, 50, 5);
+    text-shadow: 0 2px 2px rgba(250, 227, 133, 1);
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    background-size: 100% 100%;
+    background-position: center;
+    }
+
+    .golden-button:focus,
+    .golden-button:hover {
+    background-size: 150% 150%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+    border: 1px solid rgba(165, 93, 7, 0.6);
+    color: rgba(120, 50, 5, 0.8);
+    }
+
+    .golden-button:active {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(110, 80, 20, 0.4),
+    inset 0 -2px 5px 1px #b17d10, inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
+    }
